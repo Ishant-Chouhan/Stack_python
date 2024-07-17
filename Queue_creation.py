@@ -19,7 +19,7 @@ press a other key to exit.""")
             print("stack is already empty...!!")
         else:
             l.pop(0)
-            print("l.pop(0) is sSuccessfully deleted...!!")
+            print("l.pop(0) is Successfully deleted...!!")
     elif choice==3:
         #display front
         print(l[0])

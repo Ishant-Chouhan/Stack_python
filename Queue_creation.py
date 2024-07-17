@@ -5,8 +5,8 @@ while True:
 press 2 to Dequeue the element
 press 3 to display Frontend
 press 4 to display Rearend 
-press to 4 to display
-press a other key to exit.""")
+press 5 to display
+press any other key to exit.""")
     #giving options to the user to perform different operations
     choice = int(input("Enter your choice: "))
     if choice==1:
@@ -26,7 +26,7 @@ press a other key to exit.""")
     elif choice==4:
         #display last element
         print(l[len(l)-1])
-    elif choice==4:
+    elif choice==5:
         #displaying stack
         print("____________QUEUE____________")
         print(l)

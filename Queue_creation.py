@@ -28,7 +28,7 @@ press a other key to exit.""")
         print(l[len(l)-1])
     elif choice==4:
         #displaying stack
-        print("____________Queue____________")
+        print("____________QUEUE____________")
         print(l)
     else:
         break

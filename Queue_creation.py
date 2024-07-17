@@ -16,7 +16,7 @@ press any other key to exit.""")
     elif choice==2:
         #Dequeue
         if l==[]:#checking queue underflow condition
-            print("stack is already empty...!!")
+            print("Queue is already empty...!!")
         else:
             l.pop(0)
             print("l.pop(0) is Successfully deleted...!!")

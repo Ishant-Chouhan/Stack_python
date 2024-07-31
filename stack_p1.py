@@ -12,11 +12,11 @@ class stack:
         if self.top==None:
             self.top=newnode
         else:
-            newnode=self.top
+            newnode.link=self.top
             self.top=newnode
 
         if self.top==")" or "}" or "]" and self.top.link!=None:
-            self.top=self.top.link
+            self.top=self.top.link.link
     
     def check_top(self):
         if self.top==None:
@@ -24,14 +24,20 @@ class stack:
         else:
             print("**************Parenthesis are not correct**************")
 
+    def display(self):
+        current=self.top
+        while current!=None:
+            print(current.data)
+            current=current.link
+
 s=stack()
 string=input("Enter parenthesis: ")
 if (len(list(string))==1) or (len(list(string))==2 and (string!="{}" or "()" or "[]")):
     print("**************Parenthesis are not correct**************")
 elif (string=="{}" or "()" or "[]") and (len(list(string))==2):
     print("**************Parenthesis are correct**************")
-for i in string:
-    print(i)
-    s.check_parenthesis(node(i))
-
-s.check_top()
+else:
+    for i in string:
+        print(i)
+        s.check_parenthesis(node(i))
+    s.check_top()

@@ -15,10 +15,19 @@ class stack:
             newnode.link=self.top
             self.top=newnode
 
-        if self.top==")" or "}" or "]" and self.top.link!=None:
-            self.top=self.top.link.link
+        while True:
+            print("________________")
+            print("while: ",self.top.data)
+            if (self.top=="}" and self.top.link=="{" ) or (self.top=="]" and self.top.link=="[" ) or (self.top==")" and self.top.link=="(" ):
+                self.top=self.top.link.link
+            else:
+                break
+                
+        # if self.top==")" or "}" or "]" and self.top.link!=None:
+        # self.top=self.top.link.link
     
     def check_top(self):
+        print("check_top: ",self.top)
         if self.top==None:
             print("**************---Parenthesis are correct**************")
         else:
@@ -32,6 +41,7 @@ class stack:
 
 s=stack()
 string=input("Enter parenthesis: ")
+
 if (len(list(string))==1) or (len(list(string))==2 and (string!="{}" or "()" or "[]")):
     print("**************Parenthesis are not correct**************")
 elif (string=="{}" or "()" or "[]") and (len(list(string))==2):
@@ -41,3 +51,4 @@ else:
         print(i)
         s.check_parenthesis(node(i))
     s.check_top()
+s.display()
